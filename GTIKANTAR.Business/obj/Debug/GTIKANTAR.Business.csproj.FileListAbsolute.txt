@@ -1,0 +1,11 @@
+D:\Projeler\GTIKANTAR\GTIKANTAR.Business\bin\Debug\GTIKANTAR.Business.dll
+D:\Projeler\GTIKANTAR\GTIKANTAR.Business\bin\Debug\GTIKANTAR.Business.pdb
+D:\Projeler\GTIKANTAR\GTIKANTAR.Business\bin\Debug\GTIKANTAR.DataType.dll
+D:\Projeler\GTIKANTAR\GTIKANTAR.Business\bin\Debug\Petaframe.DataAccess.dll
+D:\Projeler\GTIKANTAR\GTIKANTAR.Business\bin\Debug\Petaframe.Logging.dll
+D:\Projeler\GTIKANTAR\GTIKANTAR.Business\bin\Debug\Petaframe.Security.dll
+D:\Projeler\GTIKANTAR\GTIKANTAR.Business\bin\Debug\Oracle.DataAccess.dll
+D:\Projeler\GTIKANTAR\GTIKANTAR.Business\bin\Debug\GTIKANTAR.DataType.pdb
+D:\Projeler\GTIKANTAR\GTIKANTAR.Business\obj\Debug\GTIKANTAR.Business.csprojResolveAssemblyReference.cache
+D:\Projeler\GTIKANTAR\GTIKANTAR.Business\obj\Debug\GTIKANTAR.Business.dll
+D:\Projeler\GTIKANTAR\GTIKANTAR.Business\obj\Debug\GTIKANTAR.Business.pdb

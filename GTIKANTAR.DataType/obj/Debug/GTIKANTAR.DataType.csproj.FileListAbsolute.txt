@@ -1,0 +1,7 @@
+D:\Projeler\GTIKANTAR\GTIKANTAR.DataType\bin\Debug\GTIKANTAR.DataType.dll
+D:\Projeler\GTIKANTAR\GTIKANTAR.DataType\bin\Debug\GTIKANTAR.DataType.pdb
+D:\Projeler\GTIKANTAR\GTIKANTAR.DataType\bin\Debug\Petaframe.DataAccess.dll
+D:\Projeler\GTIKANTAR\GTIKANTAR.DataType\bin\Debug\Oracle.DataAccess.dll
+D:\Projeler\GTIKANTAR\GTIKANTAR.DataType\obj\Debug\GTIKANTAR.DataType.csprojResolveAssemblyReference.cache
+D:\Projeler\GTIKANTAR\GTIKANTAR.DataType\obj\Debug\GTIKANTAR.DataType.dll
+D:\Projeler\GTIKANTAR\GTIKANTAR.DataType\obj\Debug\GTIKANTAR.DataType.pdb
