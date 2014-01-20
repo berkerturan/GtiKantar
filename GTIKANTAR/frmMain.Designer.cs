@@ -83,20 +83,20 @@
             // yeniTartımToolStripMenuItem
             // 
             this.yeniTartımToolStripMenuItem.Name = "yeniTartımToolStripMenuItem";
-            this.yeniTartımToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.yeniTartımToolStripMenuItem.Size = new System.Drawing.Size(139, 24);
             this.yeniTartımToolStripMenuItem.Text = "Firma";
             this.yeniTartımToolStripMenuItem.Click += new System.EventHandler(this.yeniTartımToolStripMenuItem_Click);
             // 
             // güncelleToolStripMenuItem
             // 
             this.güncelleToolStripMenuItem.Name = "güncelleToolStripMenuItem";
-            this.güncelleToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.güncelleToolStripMenuItem.Size = new System.Drawing.Size(139, 24);
             this.güncelleToolStripMenuItem.Text = "Malzeme";
             // 
             // araçToolStripMenuItem
             // 
             this.araçToolStripMenuItem.Name = "araçToolStripMenuItem";
-            this.araçToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.araçToolStripMenuItem.Size = new System.Drawing.Size(139, 24);
             this.araçToolStripMenuItem.Text = "Araç";
             // 
             // tartımToolStripMenuItem
@@ -113,6 +113,7 @@
             this.yeniTartımToolStripMenuItem1.Name = "yeniTartımToolStripMenuItem1";
             this.yeniTartımToolStripMenuItem1.Size = new System.Drawing.Size(182, 24);
             this.yeniTartımToolStripMenuItem1.Text = "Yeni Tartım";
+            this.yeniTartımToolStripMenuItem1.Click += new System.EventHandler(this.yeniTartımToolStripMenuItem1_Click);
             // 
             // tartımGüncelleToolStripMenuItem
             // 
@@ -134,12 +135,14 @@
             this.veriTabanıBağlantılarıToolStripMenuItem.Name = "veriTabanıBağlantılarıToolStripMenuItem";
             this.veriTabanıBağlantılarıToolStripMenuItem.Size = new System.Drawing.Size(233, 24);
             this.veriTabanıBağlantılarıToolStripMenuItem.Text = "Veri Tabanı Bağlantıları";
+            this.veriTabanıBağlantılarıToolStripMenuItem.Click += new System.EventHandler(this.veriTabanıBağlantılarıToolStripMenuItem_Click);
             // 
             // seriPortAyarlarıToolStripMenuItem
             // 
             this.seriPortAyarlarıToolStripMenuItem.Name = "seriPortAyarlarıToolStripMenuItem";
             this.seriPortAyarlarıToolStripMenuItem.Size = new System.Drawing.Size(233, 24);
             this.seriPortAyarlarıToolStripMenuItem.Text = "Seri Port Ayarları";
+            this.seriPortAyarlarıToolStripMenuItem.Click += new System.EventHandler(this.seriPortAyarlarıToolStripMenuItem_Click);
             // 
             // hakkındaToolStripMenuItem
             // 

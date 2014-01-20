@@ -60,5 +60,53 @@ namespace GTIKANTAR
                 this.ActivateMdiChild(f);
             }
         }
+
+        private void veriTabanıBağlantılarıToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form f = Helpers.Tools.Varmi("ConnectionStrings", this as frmMain);
+            if (f == null)
+            {
+                f = new Parametreler.ConnectionStrings();
+                f.MdiParent = this;
+                f.Show();
+            }
+            else
+            {
+                f.BringToFront();
+                this.ActivateMdiChild(f);
+            }
+        }
+
+        private void seriPortAyarlarıToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form f = Helpers.Tools.Varmi("SeriPortParameters", this as frmMain);
+            if (f == null)
+            {
+                f = new Parametreler.SeriPortParameters();
+                f.MdiParent = this;
+                f.Show();
+            }
+            else
+            {
+                f.BringToFront();
+                this.ActivateMdiChild(f);
+            }
+        }
+
+        private void yeniTartımToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Form f = Helpers.Tools.Varmi("YeniTartim", this as frmMain);
+            if (f == null)
+            {
+                f = new YeniTartim();
+                f.MdiParent = this;
+                f.Show();
+            }
+            else
+            {
+                f.BringToFront();
+                this.ActivateMdiChild(f);
+            }
+        }
     }
 }

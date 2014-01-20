@@ -33,8 +33,23 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.txtAraFirmaAdi = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.txtAraAdres1 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.txtAraAdres2 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.txtAraVergiDairesi = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.txtaraVergiNo = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.grdFirms = new System.Windows.Forms.DataGridView();
+            this.FIRMID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FIRMAKODU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FIRMAADI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ADRES1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ADRES2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VERGIDAIRESI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VERGINO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -50,6 +65,7 @@
             this.btnEkle = new System.Windows.Forms.Button();
             this.btnDuzenle = new System.Windows.Forms.Button();
             this.btnSil = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdFirms)).BeginInit();
             this.SuspendLayout();
@@ -61,7 +77,15 @@
             this.txtAraFirmaKod,
             this.toolStripSeparator1,
             this.txtAraFirmaAdi,
-            this.toolStripSeparator2});
+            this.toolStripSeparator2,
+            this.txtAraAdres1,
+            this.toolStripSeparator6,
+            this.txtAraAdres2,
+            this.toolStripSeparator5,
+            this.txtAraVergiDairesi,
+            this.toolStripSeparator4,
+            this.txtaraVergiNo,
+            this.toolStripSeparator3});
             this.toolStrip1.Location = new System.Drawing.Point(0, 523);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(820, 27);
@@ -72,6 +96,7 @@
             // 
             this.txtAraFirmaKod.Name = "txtAraFirmaKod";
             this.txtAraFirmaKod.Size = new System.Drawing.Size(100, 27);
+            this.txtAraFirmaKod.TextChanged += new System.EventHandler(this.txtAraFirmaKod_TextChanged);
             // 
             // toolStripSeparator1
             // 
@@ -82,11 +107,56 @@
             // 
             this.txtAraFirmaAdi.Name = "txtAraFirmaAdi";
             this.txtAraFirmaAdi.Size = new System.Drawing.Size(100, 27);
+            this.txtAraFirmaAdi.TextChanged += new System.EventHandler(this.txtAraFirmaAdi_TextChanged);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
+            // 
+            // txtAraAdres1
+            // 
+            this.txtAraAdres1.Name = "txtAraAdres1";
+            this.txtAraAdres1.Size = new System.Drawing.Size(100, 27);
+            this.txtAraAdres1.TextChanged += new System.EventHandler(this.txtAraAdres1_TextChanged);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 27);
+            // 
+            // txtAraAdres2
+            // 
+            this.txtAraAdres2.Name = "txtAraAdres2";
+            this.txtAraAdres2.Size = new System.Drawing.Size(100, 27);
+            this.txtAraAdres2.TextChanged += new System.EventHandler(this.txtAraAdres2_TextChanged);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 27);
+            // 
+            // txtAraVergiDairesi
+            // 
+            this.txtAraVergiDairesi.Name = "txtAraVergiDairesi";
+            this.txtAraVergiDairesi.Size = new System.Drawing.Size(100, 27);
+            this.txtAraVergiDairesi.TextChanged += new System.EventHandler(this.txtAraVergiDairesi_TextChanged);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 27);
+            // 
+            // txtaraVergiNo
+            // 
+            this.txtaraVergiNo.Name = "txtaraVergiNo";
+            this.txtaraVergiNo.Size = new System.Drawing.Size(100, 27);
+            this.txtaraVergiNo.TextChanged += new System.EventHandler(this.txtaraVergiNo_TextChanged);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 27);
             // 
             // splitter1
             // 
@@ -99,13 +169,75 @@
             // 
             // grdFirms
             // 
+            this.grdFirms.AllowUserToAddRows = false;
+            this.grdFirms.AllowUserToDeleteRows = false;
             this.grdFirms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdFirms.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.FIRMID,
+            this.FIRMAKODU,
+            this.FIRMAADI,
+            this.ADRES1,
+            this.ADRES2,
+            this.VERGIDAIRESI,
+            this.VERGINO});
             this.grdFirms.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdFirms.Location = new System.Drawing.Point(0, 238);
             this.grdFirms.Name = "grdFirms";
+            this.grdFirms.ReadOnly = true;
             this.grdFirms.RowTemplate.Height = 24;
             this.grdFirms.Size = new System.Drawing.Size(820, 285);
             this.grdFirms.TabIndex = 15;
+            this.grdFirms.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdFirms_CellDoubleClick);
+            // 
+            // FIRMID
+            // 
+            this.FIRMID.DataPropertyName = "FIRMID";
+            this.FIRMID.HeaderText = "FIRMID";
+            this.FIRMID.Name = "FIRMID";
+            this.FIRMID.ReadOnly = true;
+            this.FIRMID.Visible = false;
+            // 
+            // FIRMAKODU
+            // 
+            this.FIRMAKODU.DataPropertyName = "FIRMAKODU";
+            this.FIRMAKODU.HeaderText = "Firma Kodu";
+            this.FIRMAKODU.Name = "FIRMAKODU";
+            this.FIRMAKODU.ReadOnly = true;
+            // 
+            // FIRMAADI
+            // 
+            this.FIRMAADI.DataPropertyName = "FIRMAADI";
+            this.FIRMAADI.HeaderText = "Firma Adı";
+            this.FIRMAADI.Name = "FIRMAADI";
+            this.FIRMAADI.ReadOnly = true;
+            // 
+            // ADRES1
+            // 
+            this.ADRES1.DataPropertyName = "ADRES1";
+            this.ADRES1.HeaderText = "Adres";
+            this.ADRES1.Name = "ADRES1";
+            this.ADRES1.ReadOnly = true;
+            // 
+            // ADRES2
+            // 
+            this.ADRES2.DataPropertyName = "ADRES2";
+            this.ADRES2.HeaderText = "Alternatif Adresi";
+            this.ADRES2.Name = "ADRES2";
+            this.ADRES2.ReadOnly = true;
+            // 
+            // VERGIDAIRESI
+            // 
+            this.VERGIDAIRESI.DataPropertyName = "VERGIDAIRESI";
+            this.VERGIDAIRESI.HeaderText = "Vergi Dairesi";
+            this.VERGIDAIRESI.Name = "VERGIDAIRESI";
+            this.VERGIDAIRESI.ReadOnly = true;
+            // 
+            // VERGINO
+            // 
+            this.VERGINO.DataPropertyName = "VERGINO";
+            this.VERGINO.HeaderText = "Vergi No";
+            this.VERGINO.Name = "VERGINO";
+            this.VERGINO.ReadOnly = true;
             // 
             // textBox1
             // 
@@ -239,6 +371,7 @@
             this.btnDuzenle.TabIndex = 8;
             this.btnDuzenle.Text = "Seçili Kaydı Düzenle";
             this.btnDuzenle.UseVisualStyleBackColor = true;
+            this.btnDuzenle.Click += new System.EventHandler(this.btnDuzenle_Click);
             // 
             // btnSil
             // 
@@ -248,12 +381,24 @@
             this.btnSil.TabIndex = 14;
             this.btnSil.Text = "Seçili Kaydı Sil";
             this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(420, 182);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(103, 44);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Yeni Kayıt";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Firma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(820, 550);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSil);
             this.Controls.Add(this.btnDuzenle);
             this.Controls.Add(this.btnEkle);
@@ -307,6 +452,22 @@
         private System.Windows.Forms.Button btnEkle;
         private System.Windows.Forms.Button btnDuzenle;
         private System.Windows.Forms.Button btnSil;
+        private System.Windows.Forms.ToolStripTextBox txtAraAdres1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripTextBox txtAraAdres2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripTextBox txtAraVergiDairesi;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripTextBox txtaraVergiNo;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FIRMID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FIRMAKODU;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FIRMAADI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ADRES1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ADRES2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VERGIDAIRESI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VERGINO;
+        private System.Windows.Forms.Button button1;
 
     }
 }

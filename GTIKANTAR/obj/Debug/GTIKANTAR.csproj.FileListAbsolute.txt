@@ -17,6 +17,9 @@ D:\Projeler\GTIKANTAR\GTIKANTAR\bin\Debug\Petaframe.Security.dll
 D:\Projeler\GTIKANTAR\GTIKANTAR\obj\Debug\GTIKANTAR.frmLogin.resources
 D:\Projeler\GTIKANTAR\GTIKANTAR\obj\Debug\GTIKANTAR.frmMain.resources
 D:\Projeler\GTIKANTAR\GTIKANTAR\obj\Debug\GTIKANTAR.Tanimlar.Firma.resources
+D:\Projeler\GTIKANTAR\GTIKANTAR\obj\Debug\GTIKANTAR.Parametreler.ConnectionStrings.resources
+D:\Projeler\GTIKANTAR\GTIKANTAR\obj\Debug\GTIKANTAR.Parametreler.SeriPortParameters.resources
+D:\Projeler\GTIKANTAR\GTIKANTAR\obj\Debug\GTIKANTAR.YeniTartim.resources
 C:\Users\sevketsahbaz\Documents\GitHub\GtiKantar\GTIKANTAR\bin\Debug\GTIKANTAR.exe.config
 C:\Users\sevketsahbaz\Documents\GitHub\GtiKantar\GTIKANTAR\obj\Debug\GTIKANTAR.exe
 C:\Users\sevketsahbaz\Documents\GitHub\GtiKantar\GTIKANTAR\obj\Debug\GTIKANTAR.pdb
