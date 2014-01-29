@@ -30,16 +30,13 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.çıkışToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tartımlarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.yeniTartımToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.güncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.araçToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tartımToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yeniTartımToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tartımGüncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.parametrelerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.veriTabanıBağlantılarıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.seriPortAyarlarıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kantarAyarlarıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hakkındaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tslblTarih = new System.Windows.Forms.ToolStripLabel();
@@ -53,7 +50,6 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.çıkışToolStripMenuItem,
-            this.tartımlarToolStripMenuItem,
             this.tartımToolStripMenuItem,
             this.parametrelerToolStripMenuItem,
             this.hakkındaToolStripMenuItem});
@@ -69,35 +65,6 @@
             this.çıkışToolStripMenuItem.Size = new System.Drawing.Size(51, 24);
             this.çıkışToolStripMenuItem.Text = "Çıkış";
             this.çıkışToolStripMenuItem.Click += new System.EventHandler(this.çıkışToolStripMenuItem_Click);
-            // 
-            // tartımlarToolStripMenuItem
-            // 
-            this.tartımlarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.yeniTartımToolStripMenuItem,
-            this.güncelleToolStripMenuItem,
-            this.araçToolStripMenuItem});
-            this.tartımlarToolStripMenuItem.Name = "tartımlarToolStripMenuItem";
-            this.tartımlarToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
-            this.tartımlarToolStripMenuItem.Text = "Tanımlar";
-            // 
-            // yeniTartımToolStripMenuItem
-            // 
-            this.yeniTartımToolStripMenuItem.Name = "yeniTartımToolStripMenuItem";
-            this.yeniTartımToolStripMenuItem.Size = new System.Drawing.Size(139, 24);
-            this.yeniTartımToolStripMenuItem.Text = "Firma";
-            this.yeniTartımToolStripMenuItem.Click += new System.EventHandler(this.yeniTartımToolStripMenuItem_Click);
-            // 
-            // güncelleToolStripMenuItem
-            // 
-            this.güncelleToolStripMenuItem.Name = "güncelleToolStripMenuItem";
-            this.güncelleToolStripMenuItem.Size = new System.Drawing.Size(139, 24);
-            this.güncelleToolStripMenuItem.Text = "Malzeme";
-            // 
-            // araçToolStripMenuItem
-            // 
-            this.araçToolStripMenuItem.Name = "araçToolStripMenuItem";
-            this.araçToolStripMenuItem.Size = new System.Drawing.Size(139, 24);
-            this.araçToolStripMenuItem.Text = "Araç";
             // 
             // tartımToolStripMenuItem
             // 
@@ -125,7 +92,8 @@
             // 
             this.parametrelerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.veriTabanıBağlantılarıToolStripMenuItem,
-            this.seriPortAyarlarıToolStripMenuItem});
+            this.seriPortAyarlarıToolStripMenuItem,
+            this.kantarAyarlarıToolStripMenuItem});
             this.parametrelerToolStripMenuItem.Name = "parametrelerToolStripMenuItem";
             this.parametrelerToolStripMenuItem.Size = new System.Drawing.Size(106, 24);
             this.parametrelerToolStripMenuItem.Text = "Parametreler";
@@ -143,6 +111,13 @@
             this.seriPortAyarlarıToolStripMenuItem.Size = new System.Drawing.Size(233, 24);
             this.seriPortAyarlarıToolStripMenuItem.Text = "Seri Port Ayarları";
             this.seriPortAyarlarıToolStripMenuItem.Click += new System.EventHandler(this.seriPortAyarlarıToolStripMenuItem_Click);
+            // 
+            // kantarAyarlarıToolStripMenuItem
+            // 
+            this.kantarAyarlarıToolStripMenuItem.Name = "kantarAyarlarıToolStripMenuItem";
+            this.kantarAyarlarıToolStripMenuItem.Size = new System.Drawing.Size(233, 24);
+            this.kantarAyarlarıToolStripMenuItem.Text = "Kantar Ayarları";
+            this.kantarAyarlarıToolStripMenuItem.Click += new System.EventHandler(this.kantarAyarlarıToolStripMenuItem_Click);
             // 
             // hakkındaToolStripMenuItem
             // 
@@ -209,10 +184,6 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem çıkışToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tartımlarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem yeniTartımToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem güncelleToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem araçToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tartımToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem yeniTartımToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem tartımGüncelleToolStripMenuItem;
@@ -224,5 +195,6 @@
         private System.Windows.Forms.ToolStripLabel tslblTarih;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripLabel tslblKullanici;
+        private System.Windows.Forms.ToolStripMenuItem kantarAyarlarıToolStripMenuItem;
     }
 }

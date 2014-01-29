@@ -45,21 +45,7 @@ namespace GTIKANTAR
             }
         }
 
-        private void yeniTartımToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form f = Helpers.Tools.Varmi("Firma", this as frmMain);
-            if (f == null)
-            {
-                f = new Tanimlar.Firma();
-                f.MdiParent = this;
-                f.Show();
-            }
-            else
-            {
-                f.BringToFront(); 
-                this.ActivateMdiChild(f);
-            }
-        }
+        
 
         private void veriTabanıBağlantılarıToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -99,6 +85,22 @@ namespace GTIKANTAR
             if (f == null)
             {
                 f = new YeniTartim();
+                f.MdiParent = this;
+                f.Show();
+            }
+            else
+            {
+                f.BringToFront();
+                this.ActivateMdiChild(f);
+            }
+        }
+
+        private void kantarAyarlarıToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form f = Helpers.Tools.Varmi("KantarGenelBilgileri", this as frmMain);
+            if (f == null)
+            {
+                f = new KantarGenelBilgileri();
                 f.MdiParent = this;
                 f.Show();
             }

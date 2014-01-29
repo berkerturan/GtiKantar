@@ -72,7 +72,7 @@
             this.btnLogin.Location = new System.Drawing.Point(391, 106);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(87, 28);
-            this.btnLogin.TabIndex = 6;
+            this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Giriş Yap";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -92,7 +92,7 @@
             this.txtSifre.Name = "txtSifre";
             this.txtSifre.PasswordChar = '*';
             this.txtSifre.Size = new System.Drawing.Size(185, 22);
-            this.txtSifre.TabIndex = 4;
+            this.txtSifre.TabIndex = 1;
             // 
             // label1
             // 
@@ -108,7 +108,7 @@
             this.txtKullaniciAdi.Location = new System.Drawing.Point(293, 28);
             this.txtKullaniciAdi.Name = "txtKullaniciAdi";
             this.txtKullaniciAdi.Size = new System.Drawing.Size(185, 22);
-            this.txtKullaniciAdi.TabIndex = 2;
+            this.txtKullaniciAdi.TabIndex = 0;
             // 
             // pictureBox1
             // 

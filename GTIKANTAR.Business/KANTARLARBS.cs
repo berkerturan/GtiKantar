@@ -39,5 +39,11 @@ namespace GTIKANTAR.Business
 
             return data.FindAll<KANTARLAR>();
         }
+        public IEnumerable<KANTARLAR> Listele(long KAPIID)
+        {
+            ISqlServerDataService data = GetSqlServerDataObject();
+            data.AddInputParameter("@ID", KAPIID, DbType.Int64);
+            return data.FindAll<KANTARLAR>("select * from KANTARLAR where KAPI=@ID");
+        }
     }
 }

@@ -449,9 +449,9 @@ namespace GTIKANTAR
                     {
                         GetKapis();
                         GetKantars();
-                        GetFirms();
-                        GetMalzemes();
-                        GetAracs();
+                       // GetFirms();
+                      //  GetMalzemes();
+                      //  GetAracs();
                         frmMain f = new frmMain();
                         f.Show();
                         this.Hide();

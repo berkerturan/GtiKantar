@@ -96,6 +96,12 @@
     <Compile Include="Parametreler\ConnectionStrings.Designer.cs">
       <DependentUpon>ConnectionStrings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Parametreler\KantarGenelBilgileri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Parametreler\KantarGenelBilgileri.Designer.cs">
+      <DependentUpon>KantarGenelBilgileri.cs</DependentUpon>
+    </Compile>
     <Compile Include="Parametreler\SeriPortParameters.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Parametreler\ConnectionStrings.resx">
       <DependentUpon>ConnectionStrings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Parametreler\KantarGenelBilgileri.resx">
+      <DependentUpon>KantarGenelBilgileri.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Parametreler\SeriPortParameters.resx">
       <DependentUpon>SeriPortParameters.cs</DependentUpon>

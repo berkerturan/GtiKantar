@@ -1,0 +1,5 @@
+C:\Users\sevketsahbaz\Documents\GitHub\GtiKantar\GTIKANTAR.DataType\bin\Release\GTIKANTAR.DataType.dll
+C:\Users\sevketsahbaz\Documents\GitHub\GtiKantar\GTIKANTAR.DataType\bin\Release\GTIKANTAR.DataType.pdb
+C:\Users\sevketsahbaz\Documents\GitHub\GtiKantar\GTIKANTAR.DataType\bin\Release\Petaframe.DataAccess.dll
+C:\Users\sevketsahbaz\Documents\GitHub\GtiKantar\GTIKANTAR.DataType\obj\Release\GTIKANTAR.DataType.dll
+C:\Users\sevketsahbaz\Documents\GitHub\GtiKantar\GTIKANTAR.DataType\obj\Release\GTIKANTAR.DataType.pdb

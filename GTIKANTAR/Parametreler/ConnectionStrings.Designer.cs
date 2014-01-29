@@ -77,28 +77,28 @@
             this.txtMerkezErp.Location = new System.Drawing.Point(202, 48);
             this.txtMerkezErp.Name = "txtMerkezErp";
             this.txtMerkezErp.Size = new System.Drawing.Size(410, 22);
-            this.txtMerkezErp.TabIndex = 3;
+            this.txtMerkezErp.TabIndex = 0;
             // 
             // txtMerkezNexus
             // 
             this.txtMerkezNexus.Location = new System.Drawing.Point(202, 89);
             this.txtMerkezNexus.Name = "txtMerkezNexus";
             this.txtMerkezNexus.Size = new System.Drawing.Size(410, 22);
-            this.txtMerkezNexus.TabIndex = 4;
+            this.txtMerkezNexus.TabIndex = 3;
             // 
             // txtLocalKantar
             // 
             this.txtLocalKantar.Location = new System.Drawing.Point(202, 133);
             this.txtLocalKantar.Name = "txtLocalKantar";
             this.txtLocalKantar.Size = new System.Drawing.Size(410, 22);
-            this.txtLocalKantar.TabIndex = 5;
+            this.txtLocalKantar.TabIndex = 6;
             // 
             // btnErpKontrol
             // 
             this.btnErpKontrol.Location = new System.Drawing.Point(630, 47);
             this.btnErpKontrol.Name = "btnErpKontrol";
             this.btnErpKontrol.Size = new System.Drawing.Size(93, 23);
-            this.btnErpKontrol.TabIndex = 6;
+            this.btnErpKontrol.TabIndex = 1;
             this.btnErpKontrol.Text = "Kontrol Et";
             this.btnErpKontrol.UseVisualStyleBackColor = true;
             this.btnErpKontrol.Click += new System.EventHandler(this.btnErpKontrol_Click);
@@ -108,7 +108,7 @@
             this.btnNexusKontrol.Location = new System.Drawing.Point(630, 88);
             this.btnNexusKontrol.Name = "btnNexusKontrol";
             this.btnNexusKontrol.Size = new System.Drawing.Size(93, 23);
-            this.btnNexusKontrol.TabIndex = 7;
+            this.btnNexusKontrol.TabIndex = 4;
             this.btnNexusKontrol.Text = "Kontrol Et";
             this.btnNexusKontrol.UseVisualStyleBackColor = true;
             this.btnNexusKontrol.Click += new System.EventHandler(this.btnNexusKontrol_Click);
@@ -118,7 +118,7 @@
             this.btnLocalKontrol.Location = new System.Drawing.Point(630, 133);
             this.btnLocalKontrol.Name = "btnLocalKontrol";
             this.btnLocalKontrol.Size = new System.Drawing.Size(93, 23);
-            this.btnLocalKontrol.TabIndex = 8;
+            this.btnLocalKontrol.TabIndex = 7;
             this.btnLocalKontrol.Text = "Kontrol Et";
             this.btnLocalKontrol.UseVisualStyleBackColor = true;
             this.btnLocalKontrol.Click += new System.EventHandler(this.btnLocalKontrol_Click);
@@ -129,7 +129,7 @@
             this.btnLocal.Location = new System.Drawing.Point(745, 133);
             this.btnLocal.Name = "btnLocal";
             this.btnLocal.Size = new System.Drawing.Size(93, 23);
-            this.btnLocal.TabIndex = 11;
+            this.btnLocal.TabIndex = 8;
             this.btnLocal.Text = "Güncelle";
             this.btnLocal.UseVisualStyleBackColor = true;
             this.btnLocal.Click += new System.EventHandler(this.btnLocal_Click);
@@ -140,7 +140,7 @@
             this.btnNexus.Location = new System.Drawing.Point(745, 88);
             this.btnNexus.Name = "btnNexus";
             this.btnNexus.Size = new System.Drawing.Size(93, 23);
-            this.btnNexus.TabIndex = 10;
+            this.btnNexus.TabIndex = 5;
             this.btnNexus.Text = "Güncelle";
             this.btnNexus.UseVisualStyleBackColor = true;
             this.btnNexus.Click += new System.EventHandler(this.btnNexus_Click);
@@ -151,7 +151,7 @@
             this.btnErp.Location = new System.Drawing.Point(745, 47);
             this.btnErp.Name = "btnErp";
             this.btnErp.Size = new System.Drawing.Size(93, 23);
-            this.btnErp.TabIndex = 9;
+            this.btnErp.TabIndex = 2;
             this.btnErp.Text = "Güncelle";
             this.btnErp.UseVisualStyleBackColor = true;
             this.btnErp.Click += new System.EventHandler(this.btnErp_Click);

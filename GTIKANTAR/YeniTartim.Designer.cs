@@ -99,14 +99,14 @@
             this.txtPlaka.Location = new System.Drawing.Point(144, 46);
             this.txtPlaka.Name = "txtPlaka";
             this.txtPlaka.Size = new System.Drawing.Size(115, 22);
-            this.txtPlaka.TabIndex = 2;
+            this.txtPlaka.TabIndex = 0;
             // 
             // txtDorse
             // 
             this.txtDorse.Location = new System.Drawing.Point(144, 74);
             this.txtDorse.Name = "txtDorse";
             this.txtDorse.Size = new System.Drawing.Size(115, 22);
-            this.txtDorse.TabIndex = 2;
+            this.txtDorse.TabIndex = 1;
             // 
             // txtSaati
             // 
@@ -131,7 +131,7 @@
             this.txtIrsaliye.Location = new System.Drawing.Point(144, 130);
             this.txtIrsaliye.Name = "txtIrsaliye";
             this.txtIrsaliye.Size = new System.Drawing.Size(115, 22);
-            this.txtIrsaliye.TabIndex = 2;
+            this.txtIrsaliye.TabIndex = 3;
             // 
             // label1
             // 

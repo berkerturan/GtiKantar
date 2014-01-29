@@ -1,0 +1,10 @@
+C:\Users\sevketsahbaz\Documents\GitHub\GtiKantar\GTIKANTAR.Business\bin\Release\GTIKANTAR.Business.dll
+C:\Users\sevketsahbaz\Documents\GitHub\GtiKantar\GTIKANTAR.Business\bin\Release\GTIKANTAR.Business.pdb
+C:\Users\sevketsahbaz\Documents\GitHub\GtiKantar\GTIKANTAR.Business\bin\Release\GTIKANTAR.DataType.dll
+C:\Users\sevketsahbaz\Documents\GitHub\GtiKantar\GTIKANTAR.Business\bin\Release\Petaframe.DataAccess.dll
+C:\Users\sevketsahbaz\Documents\GitHub\GtiKantar\GTIKANTAR.Business\bin\Release\Petaframe.Logging.dll
+C:\Users\sevketsahbaz\Documents\GitHub\GtiKantar\GTIKANTAR.Business\bin\Release\Petaframe.Security.dll
+C:\Users\sevketsahbaz\Documents\GitHub\GtiKantar\GTIKANTAR.Business\bin\Release\GTIKANTAR.DataType.pdb
+C:\Users\sevketsahbaz\Documents\GitHub\GtiKantar\GTIKANTAR.Business\obj\Release\GTIKANTAR.Business.csprojResolveAssemblyReference.cache
+C:\Users\sevketsahbaz\Documents\GitHub\GtiKantar\GTIKANTAR.Business\obj\Release\GTIKANTAR.Business.dll
+C:\Users\sevketsahbaz\Documents\GitHub\GtiKantar\GTIKANTAR.Business\obj\Release\GTIKANTAR.Business.pdb

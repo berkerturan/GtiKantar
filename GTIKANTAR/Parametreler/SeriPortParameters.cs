@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Petaframe.Security;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -18,8 +19,9 @@ namespace GTIKANTAR.Parametreler
         }
 
         private void Kaydet_Click(object sender, EventArgs e)
-        {int sayi;
-            if (string.IsNullOrEmpty(cmbHandShake.SelectedItem.ToString()) || string.IsNullOrEmpty(cmbParity.SelectedItem.ToString()) || string.IsNullOrEmpty(cmbPort.SelectedItem.ToString()) || string.IsNullOrEmpty(cmbStopBit.SelectedItem.ToString())||string.IsNullOrEmpty(txtBaudRate.Text)||string.IsNullOrEmpty(txtDataBits.Text))
+        {
+            int sayi;
+            if (string.IsNullOrEmpty(cmbHandShake.SelectedItem.ToString()) || string.IsNullOrEmpty(cmbParity.SelectedItem.ToString()) || string.IsNullOrEmpty(cmbPort.SelectedItem.ToString()) || string.IsNullOrEmpty(cmbStopBit.SelectedItem.ToString()) || string.IsNullOrEmpty(txtBaudRate.Text) || string.IsNullOrEmpty(txtDataBits.Text))
             {
                 MessageBox.Show("Bütün Alanları Doldurunuz!", "Eksik Veri", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -37,7 +39,7 @@ namespace GTIKANTAR.Parametreler
                 config.AppSettings.Settings.Remove("StopBit");
                 config.AppSettings.Settings.Remove("DataBit");
                 config.AppSettings.Settings.Remove("HandShake");
-          
+
                 config.AppSettings.Settings.Add("Port", Petaframe.Security.Crytography.Encrypt(cmbPort.SelectedItem.ToString(), Petaframe.Security.Crytography.HashType.AES));
                 config.AppSettings.Settings.Add("BaudRate", Petaframe.Security.Crytography.Encrypt(txtBaudRate.Text,
      Petaframe.Security.Crytography.HashType.AES));
@@ -46,8 +48,23 @@ namespace GTIKANTAR.Parametreler
                 config.AppSettings.Settings.Add("DataBit", Petaframe.Security.Crytography.Encrypt(txtDataBits.Text, Petaframe.Security.Crytography.HashType.AES));
                 config.AppSettings.Settings.Add("HandShake", Petaframe.Security.Crytography.Encrypt(cmbHandShake.SelectedItem.ToString(), Petaframe.Security.Crytography.HashType.AES));
                 config.Save(ConfigurationSaveMode.Minimal);
-                MessageBox.Show("Kayıt İşlemi Başarıyla Tamamlanmıştır.", "Eksik Veri", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Kayıt İşlemi Başarıyla Tamamlanmıştır.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void SeriPortParameters_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                txtBaudRate.Text = Crytography.Decrypt(ConfigurationManager.AppSettings["BaudRate"].ToString(), Petaframe.Security.Crytography.HashType.AES);
+                txtDataBits.Text = Crytography.Decrypt(ConfigurationManager.AppSettings["DataBit"].ToString(), Petaframe.Security.Crytography.HashType.AES);
+                cmbParity.SelectedItem = Crytography.Decrypt(ConfigurationManager.AppSettings["Parity"].ToString(), Petaframe.Security.Crytography.HashType.AES);
+                cmbHandShake.SelectedItem = Crytography.Decrypt(ConfigurationManager.AppSettings["HandShake"].ToString(), Petaframe.Security.Crytography.HashType.AES);
+                cmbPort.SelectedItem = Crytography.Decrypt(ConfigurationManager.AppSettings["Port"].ToString(), Petaframe.Security.Crytography.HashType.AES);
+                cmbStopBit.SelectedItem = Crytography.Decrypt(ConfigurationManager.AppSettings["StopBit"].ToString(), Petaframe.Security.Crytography.HashType.AES);
+            }
+            catch
+            { }
         }
     }
 }

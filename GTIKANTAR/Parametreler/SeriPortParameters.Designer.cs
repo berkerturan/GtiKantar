@@ -127,7 +127,7 @@
             this.cmbPort.Location = new System.Drawing.Point(134, 9);
             this.cmbPort.Name = "cmbPort";
             this.cmbPort.Size = new System.Drawing.Size(121, 24);
-            this.cmbPort.TabIndex = 1;
+            this.cmbPort.TabIndex = 0;
             // 
             // cmbParity
             // 
@@ -142,7 +142,7 @@
             this.cmbParity.Location = new System.Drawing.Point(134, 67);
             this.cmbParity.Name = "cmbParity";
             this.cmbParity.Size = new System.Drawing.Size(121, 24);
-            this.cmbParity.TabIndex = 1;
+            this.cmbParity.TabIndex = 2;
             // 
             // cmbStopBit
             // 
@@ -156,7 +156,7 @@
             this.cmbStopBit.Location = new System.Drawing.Point(134, 97);
             this.cmbStopBit.Name = "cmbStopBit";
             this.cmbStopBit.Size = new System.Drawing.Size(121, 24);
-            this.cmbStopBit.TabIndex = 1;
+            this.cmbStopBit.TabIndex = 3;
             // 
             // cmbHandShake
             // 
@@ -170,28 +170,28 @@
             this.cmbHandShake.Location = new System.Drawing.Point(134, 153);
             this.cmbHandShake.Name = "cmbHandShake";
             this.cmbHandShake.Size = new System.Drawing.Size(121, 24);
-            this.cmbHandShake.TabIndex = 1;
+            this.cmbHandShake.TabIndex = 5;
             // 
             // txtBaudRate
             // 
             this.txtBaudRate.Location = new System.Drawing.Point(134, 40);
             this.txtBaudRate.Name = "txtBaudRate";
             this.txtBaudRate.Size = new System.Drawing.Size(121, 22);
-            this.txtBaudRate.TabIndex = 2;
+            this.txtBaudRate.TabIndex = 1;
             // 
             // txtDataBits
             // 
             this.txtDataBits.Location = new System.Drawing.Point(134, 125);
             this.txtDataBits.Name = "txtDataBits";
             this.txtDataBits.Size = new System.Drawing.Size(121, 22);
-            this.txtDataBits.TabIndex = 2;
+            this.txtDataBits.TabIndex = 4;
             // 
             // Kaydet
             // 
             this.Kaydet.Location = new System.Drawing.Point(180, 183);
             this.Kaydet.Name = "Kaydet";
             this.Kaydet.Size = new System.Drawing.Size(75, 23);
-            this.Kaydet.TabIndex = 3;
+            this.Kaydet.TabIndex = 6;
             this.Kaydet.Text = "Kaydet";
             this.Kaydet.UseVisualStyleBackColor = true;
             this.Kaydet.Click += new System.EventHandler(this.Kaydet_Click);
@@ -217,6 +217,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "SeriPortParameters";
             this.Text = "Seri Port Parametreleri";
+            this.Load += new System.EventHandler(this.SeriPortParameters_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
