@@ -36,5 +36,13 @@ namespace GTIKANTAR
 
         }
 
+        public static string KapiConnection
+        {
+            get
+            {
+                return ConfigurationManager.AppSettings["KapiConnection"].ToString();
+            }
+
+        }
     }
 }

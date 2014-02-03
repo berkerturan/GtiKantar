@@ -44,7 +44,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EMPLOYEES.cs" />
+    <Compile Include="IKANTAR.cs" />
     <Compile Include="KANTARLAR.cs" />
+    <Compile Include="KANTAR_KAPI.cs" />
+    <Compile Include="KANTAR_LOCAL.cs" />
     <Compile Include="KAPI.cs" />
     <Compile Include="KANTAR_ARAC.cs" />
     <Compile Include="KANTAR_FIRM.cs" />

@@ -20,7 +20,7 @@ namespace GTIKANTAR.Parametreler
 
         private void btnErpKontrol_Click(object sender, EventArgs e)
         {
-            
+
             try
             {
                 SqlConnection con = new SqlConnection(txtMerkezErp.Text);
@@ -37,7 +37,7 @@ namespace GTIKANTAR.Parametreler
 
         private void btnNexusKontrol_Click(object sender, EventArgs e)
         {
-          
+
             try
             {
                 SqlConnection con = new SqlConnection(txtMerkezNexus.Text);
@@ -53,7 +53,6 @@ namespace GTIKANTAR.Parametreler
         }
         private void btnLocalKontrol_Click(object sender, EventArgs e)
         {
-           
             try
             {
                 SqlConnection con = new SqlConnection(txtLocalKantar.Text);
@@ -100,6 +99,46 @@ namespace GTIKANTAR.Parametreler
             txtLocalKantar.Enabled = true;
             btnLocal.Enabled = false;
             txtLocalKantar.Text = "";
+        }
+
+        private void btnSifre_Click(object sender, EventArgs e)
+        {
+            if (txtSifre.Text == "Kantar2014GTİ")
+            {
+                panel1.Enabled = true;
+                txtSifre.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Şifre Yanlış!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnKapıKontrol_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection(txtKapiKantar.Text);
+                con.Open();
+                con.Close();
+                btnKapi.Enabled = true;
+                txtKapiKantar.Enabled = false;
+            }
+            catch
+            {
+                MessageBox.Show("Girdiğiniz Bağlantı Kodu Yanlıştır!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnKapi_Click(object sender, EventArgs e)
+        {
+            Configuration config = ConfigurationManager.OpenExeConfiguration(Application.ExecutablePath);
+            config.AppSettings.Settings.Remove("KapiConnection");
+            config.AppSettings.Settings.Add("KapiConnection", Petaframe.Security.Crytography.Encrypt(txtLocalKantar.Text, Petaframe.Security.Crytography.HashType.AES));
+            config.Save(ConfigurationSaveMode.Minimal);
+            txtKapiKantar.Enabled = true;
+            btnKapi.Enabled = false;
+            txtKapiKantar.Text = "";
         }
     }
 }

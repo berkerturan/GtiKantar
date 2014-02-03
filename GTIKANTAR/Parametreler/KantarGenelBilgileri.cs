@@ -72,5 +72,18 @@ namespace GTIKANTAR
             config.Save(ConfigurationSaveMode.Minimal);
             MessageBox.Show("Kayıt İşlemi Başarıyla Tamamlanmıştır.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void btnSifre_Click(object sender, EventArgs e)
+        {
+            if (txtSifre.Text == "Kantar2014GTİ")
+            {
+                panel1.Enabled = true;
+                txtSifre.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Şifre Yanlış!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

@@ -44,6 +44,8 @@
             this.txtAlinan = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnKaydet = new System.Windows.Forms.Button();
+            this.cmbAlan1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // port
@@ -52,6 +54,7 @@
             // 
             // txtTartim
             // 
+            this.txtTartim.Enabled = false;
             this.txtTartim.Location = new System.Drawing.Point(494, 46);
             this.txtTartim.Name = "txtTartim";
             this.txtTartim.Size = new System.Drawing.Size(140, 22);
@@ -112,7 +115,7 @@
             // 
             this.txtSaati.Location = new System.Drawing.Point(143, 102);
             this.txtSaati.Name = "txtSaati";
-            this.txtSaati.Size = new System.Drawing.Size(115, 22);
+            this.txtSaati.Size = new System.Drawing.Size(116, 22);
             this.txtSaati.TabIndex = 2;
             // 
             // textBox4
@@ -144,6 +147,7 @@
             // 
             // txtAlinan
             // 
+            this.txtAlinan.Enabled = false;
             this.txtAlinan.Location = new System.Drawing.Point(144, 159);
             this.txtAlinan.Name = "txtAlinan";
             this.txtAlinan.Size = new System.Drawing.Size(115, 22);
@@ -170,11 +174,34 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnKaydet
+            // 
+            this.btnKaydet.Location = new System.Drawing.Point(144, 224);
+            this.btnKaydet.Name = "btnKaydet";
+            this.btnKaydet.Size = new System.Drawing.Size(115, 32);
+            this.btnKaydet.TabIndex = 6;
+            this.btnKaydet.Text = "Kaydet";
+            this.btnKaydet.UseVisualStyleBackColor = true;
+            this.btnKaydet.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // cmbAlan1
+            // 
+            this.cmbAlan1.FormattingEnabled = true;
+            this.cmbAlan1.Items.AddRange(new object[] {
+            "Dolu",
+            "Boş"});
+            this.cmbAlan1.Location = new System.Drawing.Point(144, 187);
+            this.cmbAlan1.Name = "cmbAlan1";
+            this.cmbAlan1.Size = new System.Drawing.Size(115, 24);
+            this.cmbAlan1.TabIndex = 7;
+            // 
             // YeniTartim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(836, 467);
+            this.Controls.Add(this.cmbAlan1);
+            this.Controls.Add(this.btnKaydet);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtAlinan);
             this.Controls.Add(this.label1);
@@ -215,5 +242,7 @@
         private System.Windows.Forms.TextBox txtAlinan;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnKaydet;
+        private System.Windows.Forms.ComboBox cmbAlan1;
     }
 }

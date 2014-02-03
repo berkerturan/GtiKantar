@@ -53,6 +53,8 @@
     <Compile Include="BusinessBase.cs" />
     <Compile Include="EMPLOYEESBS.cs" />
     <Compile Include="KANTARLARBS.cs" />
+    <Compile Include="KANTAR_KAPIBS.cs" />
+    <Compile Include="KANTAR_LOCALBS.cs" />
     <Compile Include="KAPIBS.cs" />
     <Compile Include="KANTAR_ARACBS.cs" />
     <Compile Include="KANTAR_FIRMBS.cs" />

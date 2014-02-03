@@ -1,13 +1,17 @@
-﻿using Petaframe.Security;
+﻿using GTIKANTAR.Business;
+using GTIKANTAR.DataType;
+using Petaframe.Security;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO.Ports;
 using System.Linq;
 using System.Text;
+using System.Transactions;
 using System.Windows.Forms;
 
 namespace GTIKANTAR
@@ -22,12 +26,24 @@ namespace GTIKANTAR
         private void port_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
         {
             sayi = 0;
-           
+
+
+            int bytes = port.BytesToRead;
+            byte[] comBuffer = new byte[bytes];
+            port.Read(comBuffer, 0, bytes);
+            string yazilacak, kyazilacak;
+            System.Text.ASCIIEncoding enc = new System.Text.ASCIIEncoding();
+            yazilacak = enc.GetString(comBuffer);
+            kyazilacak = yazilacak.Substring(1).Trim();
+            int tartim;
+
+            if (int.TryParse(kyazilacak, out tartim))
+            {
                 this.Invoke(new MethodInvoker(delegate
                 {
-                    txtTartim.Text = port.ReadLine();
+                    txtTartim.Text = tartim.ToString();
                 }));
-            
+            }
         }
 
         private void YeniTartim_Load(object sender, EventArgs e)
@@ -121,11 +137,64 @@ namespace GTIKANTAR
             }
         }
 
-  
+
 
         private void button1_Click(object sender, EventArgs e)
         {
             txtAlinan.Text = txtTartim.Text;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            using (TransactionScope scope = new TransactionScope())
+            {
+                try
+                {
+                    decimal tartim;
+                    if (string.IsNullOrEmpty(txtPlaka.Text))
+                    {
+                        MessageBox.Show("Plaka Alanının Doldurulması Zorunludur!", "Eksik Veri", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (string.IsNullOrEmpty(txtTartim.Text))
+                    {
+                        MessageBox.Show("Tartımı Sabitlemeniz Gerekmektedir!", "Eksik Veri", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                        else if (decimal.TryParse(txtTartim.Text, out tartim))
+                    {
+                        MessageBox.Show("Tartım Alanındaki Veri Yanlıştır!", "Hatalı Veri", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        IEnumerable<KANTAR_KAPI> KapiVerileri;
+                        using (KANTAR_KAPIBS kbs = new KANTAR_KAPIBS(ConnectionStrings.KapiConnection))
+                        {
+                            KapiVerileri = kbs.ListeleSinceYesterday();
+                        }
+                        KANTAR_LOCAL entity = new KANTAR_LOCAL()
+                        {
+                            ILKTARTIMTARIHI = DateTime.Now,
+                            DORSE = txtDorse.Text,
+                            KAPIYAYAZILDIMI = false,
+                            KULLANICI = frmLogin.GirişYapan.FNAME + ' ' + frmLogin.GirişYapan.LNAME,
+                            PLAKA = txtPlaka.Text,
+                            ROWID = Guid.NewGuid(),
+                            TARTIM1 = tartim,
+                            TIP = "C",
+                            ALAN1 = cmbAlan1.SelectedValue.ToString()
+                        };
+                    }
+                }
+                catch (Exception exp)
+                {
+                    StackTrace st = new StackTrace();
+                    StackFrame sf = new StackFrame();
+                    new Helpers.ExceptionLogger().ThrowExp(exp, this as Form, sf.GetMethod().Name);
+                    return;
+                }
+            }
+
+
         }
     }
 }

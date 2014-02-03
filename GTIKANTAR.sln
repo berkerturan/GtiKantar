@@ -7,6 +7,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GTIKANTAR.DataType", "GTIKA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GTIKANTAR.Business", "GTIKANTAR.Business\GTIKANTAR.Business.csproj", "{497B2539-1AD7-424F-B96E-D2EAE6B277AC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Artifacts", "Artifacts", "{D709C249-9280-4CFB-BE1A-59F2A3F9D521}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataBaseScripts", "DataBaseScripts", "{5CF2ED31-1E29-4775-A230-D07B2DFECB49}"
+	ProjectSection(SolutionItems) = preProject
+		MerkezERP.sql = MerkezERP.sql
+		MerkezNexus.sql = MerkezNexus.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,5 +36,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5CF2ED31-1E29-4775-A230-D07B2DFECB49} = {D709C249-9280-4CFB-BE1A-59F2A3F9D521}
 	EndGlobalSection
 EndGlobal
