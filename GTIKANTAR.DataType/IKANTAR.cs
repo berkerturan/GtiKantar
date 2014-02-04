@@ -7,33 +7,34 @@ namespace GTIKANTAR.DataType
 {
     interface IKANTAR
     {
-        public decimal ID { get; set; }
+        decimal ID { get; set; }
 
-        public string TIP { get; set; }
+         string TIP { get; set; }
 
-        public string PLAKA { get; set; }
+         string PLAKA { get; set; }
 
-        public string DORSE { get; set; }
+         string DORSE { get; set; }
 
-        public DateTime? ILKTARTIMTARIHI { get; set; }
+         DateTime? ILKTARTIMTARIHI { get; set; }
 
 
         //Dolu Boş Bilgisini Barındıracak
-        public string ALAN1 { get; set; }
+         string ALAN1 { get; set; }
 
-        //  public string ALAN2 { get; set; }
+        //ALAN2 Yerine araç eğer Aynı Gün içinde İkinci Kez Tartılıyorsa Nedeni Yazılır. Zorunlu Alan Olacak
+          string ALAN2 { get; set; }
 
         //   public string ALAN3 { get; set; }
 
         //  public string ALAN4 { get; set; }
         //2014
-        public decimal? TARTIM1 { get; set; }
+         decimal? TARTIM1 { get; set; }
 
         //  public decimal TARTIM2 { get; set; }
 
-        public string KULLANICI { get; set; }
+         string KULLANICI { get; set; }
 
-        public Guid ROWID { get; set; }
+         Guid ROWID { get; set; }
 
 
     }

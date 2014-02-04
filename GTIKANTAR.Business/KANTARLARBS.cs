@@ -7,9 +7,9 @@ using System.Text;
 
 namespace GTIKANTAR.Business
 {
-  public  class KANTARLARBS: BusinessBase
+    public class KANTARLARBS : BusinessBase
     {
-      public KANTARLARBS(string ConnectionString)
+        public KANTARLARBS(string ConnectionString)
             : base(ConnectionString)
         {
 
@@ -39,11 +39,17 @@ namespace GTIKANTAR.Business
 
             return data.FindAll<KANTARLAR>();
         }
-        public IEnumerable<KANTARLAR> Listele(long KAPIID)
+        public IEnumerable<KANTARLAR> Listele(decimal KAPIID)
         {
             ISqlServerDataService data = GetSqlServerDataObject();
-            data.AddInputParameter("@ID", KAPIID, DbType.Int64);
+            data.AddInputParameter("@ID", KAPIID, DbType.Decimal);
             return data.FindAll<KANTARLAR>("select * from KANTARLAR where KAPI=@ID");
+        }
+        public KANTARLAR GetKantar(decimal KANTARID)
+        {
+            ISqlServerDataService data = GetSqlServerDataObject();
+            data.AddInputParameter("@ID", KANTARID, DbType.Decimal);
+            return data.FindBy<KANTARLAR>("select * from KANTARLAR where ID=@ID");
         }
     }
 }

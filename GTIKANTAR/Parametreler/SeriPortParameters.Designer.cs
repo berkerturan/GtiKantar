@@ -215,6 +215,7 @@
             this.panel1.Controls.Add(this.cmbParity);
             this.panel1.Controls.Add(this.textBox6);
             this.panel1.Controls.Add(this.cmbPort);
+            this.panel1.Enabled = false;
             this.panel1.Location = new System.Drawing.Point(12, 39);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(260, 211);

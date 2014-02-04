@@ -12,6 +12,7 @@ using GTIKANTAR.DataType;
 using System.Configuration;
 using System.Transactions;
 using System.Diagnostics;
+using Petaframe.Security;
 
 namespace GTIKANTAR
 {
@@ -21,7 +22,7 @@ namespace GTIKANTAR
         {
             InitializeComponent();
         }
-        public static EMPLOYEES GirişYapan;
+        //public static EMPLOYEES GirişYapan;
         private void Form1_Load(object sender, EventArgs e)
         {
             GetEmployees();
@@ -440,8 +441,8 @@ namespace GTIKANTAR
             {
                 using (EMPLOYEESBS bs = new EMPLOYEESBS(ConnectionStrings.KantarConnection))
                 {
-                    GirişYapan = bs.KullaniciAdiSifreKontrol(txtKullaniciAdi.Text.ToLower().Trim(), txtSifre.Text.ToLower().Trim());
-                    if (GirişYapan == null)
+                   Helpers.GlobalVeriler.ACTIVEUSER= bs.KullaniciAdiSifreKontrol(txtKullaniciAdi.Text.ToLower().Trim(), txtSifre.Text.ToLower().Trim());
+                   if (Helpers.GlobalVeriler.ACTIVEUSER == null)
                     {
                         MessageBox.Show("Kullanıcı Adı-Şifre Uyumsuz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
@@ -452,6 +453,17 @@ namespace GTIKANTAR
                        // GetFirms();
                       //  GetMalzemes();
                       //  GetAracs();
+                       string Kantarid= ConfigurationManager.AppSettings["KANTAR"].ToString();
+                       if(!string.IsNullOrEmpty(Kantarid))
+                       {
+                           string _Kantarid = Crytography.Decrypt(Kantarid, Petaframe.Security.Crytography.HashType.AES);
+                           using(KANTARLARBS bsk=new KANTARLARBS(ConnectionStrings.KantarConnection))
+                           {
+                               Helpers.GlobalVeriler.ACTIVEKANTAR = bsk.GetKantar(Convert.ToDecimal(_Kantarid));
+                               Helpers.GlobalVeriler.KantarYonu=(Helpers.GlobalVeriler.ACTIVEKANTAR.ADI.ToLower().Contains("çıkış")?false:true);
+                            }
+                       }
+                        
                         frmMain f = new frmMain();
                         f.Show();
                         this.Hide();

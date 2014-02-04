@@ -20,7 +20,7 @@ namespace GTIKANTAR
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            tslblKullanici.Text = frmLogin.GirişYapan.FNAME + " " + frmLogin.GirişYapan.LNAME;
+            tslblKullanici.Text = Helpers.GlobalVeriler.ACTIVEUSER.FNAME + " " + Helpers.GlobalVeriler.ACTIVEUSER.LNAME;
             tslblTarih.Text = DateTime.Today.ToString("dd.MM.yyyy");
         }
 
@@ -101,6 +101,22 @@ namespace GTIKANTAR
             if (f == null)
             {
                 f = new KantarGenelBilgileri();
+                f.MdiParent = this;
+                f.Show();
+            }
+            else
+            {
+                f.BringToFront();
+                this.ActivateMdiChild(f);
+            }
+        }
+
+        private void tartımGüncelleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form f = Helpers.Tools.Varmi("TartimGuncelle", this as frmMain);
+            if (f == null)
+            {
+                f = new TartimGuncelle();
                 f.MdiParent = this;
                 f.Show();
             }

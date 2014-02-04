@@ -2,6 +2,7 @@
 using Petaframe.DataAccess;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 
@@ -39,11 +40,19 @@ namespace GTIKANTAR.Business
 
             return data.FindAll<KANTAR_KAPI>();
         }
+        public KANTAR_KAPI Listele(decimal KantarID, decimal TartimNo)
+        {
+            ISqlServerDataService data = GetSqlServerDataObject();
+            data.AddInputParameter("@KANTARID", KantarID, DbType.Decimal);
+            data.AddInputParameter("@TARTIMNO", TartimNo, DbType.Decimal);
+            return data.FindBy<KANTAR_KAPI>("select Top 1 * from KANTAR where (KANTARLAR=@KANTARID and TARTIMNO=@TARTIMNO and ILKTARTIMTARIHI> DATEADD(day,-1,getdate())) Order by ID desc ");
+        }
+
         public IEnumerable<KANTAR_KAPI> ListeleSinceYesterday()
         {
             ISqlServerDataService data = GetSqlServerDataObject();
 
-            return data.FindAll<KANTAR_KAPI>("select * from KANTAR where TARIH> DATEADD(day,-1,getdate())");
+            return data.FindAll<KANTAR_KAPI>("select * from KANTAR where ILKTARTIMTARIHI> DATEADD(day,-1,getdate())");
         }   
     }
 }

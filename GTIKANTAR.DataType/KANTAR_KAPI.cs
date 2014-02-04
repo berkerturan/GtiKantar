@@ -6,6 +6,7 @@ using System.Text;
 
 namespace GTIKANTAR.DataType
 {
+    [TableName("KANTAR")]
     public class KANTAR_KAPI : IKANTAR
     {
         //Kapıdaki DB'ye de Merkezdeki db'ye de TARTIMNO olarak yazılacak.
@@ -23,11 +24,15 @@ namespace GTIKANTAR.DataType
 
         public string ALAN1 { get; set; }
 
+        public string ALAN2 { get; set; }
+
         public decimal? TARTIM1 { get; set; }
 
         public string KULLANICI { get; set; }
 
         public Guid ROWID { get; set; }
+
+        public bool? GIRISYONUMU { get; set; }//true ise türkiyeye giren araçlar false ise Türkiye'den çıkan araçlar
 
         public bool? MERKEZEYAZILDIMI { get; set; }
         //Clientdaki Kantar satırının ID'si alınacak.
@@ -35,5 +40,6 @@ namespace GTIKANTAR.DataType
         //Config Dosyasından KANTARID alınacak.
         public decimal? KANTARLAR { get; set; }
 
+        public DateTime? SONTARTIMTARIHI { get; set; }// Güncelleme veya silinme yapıldıysa onun tarihini yazıcak.
     }
 }

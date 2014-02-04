@@ -20,3 +20,4 @@ C:\Users\sevketsahbaz\Documents\GitHub\GtiKantar\GTIKANTAR\obj\Release\GTIKANTAR
 C:\Users\sevketsahbaz\Documents\GitHub\GtiKantar\GTIKANTAR\obj\Release\GTIKANTAR.csproj.GenerateResource.Cache
 C:\Users\sevketsahbaz\Documents\GitHub\GtiKantar\GTIKANTAR\obj\Release\GTIKANTAR.exe
 C:\Users\sevketsahbaz\Documents\GitHub\GtiKantar\GTIKANTAR\obj\Release\GTIKANTAR.pdb
+C:\Users\sevketsahbaz\Documents\GitHub\GtiKantar\GTIKANTAR\obj\Release\GTIKANTAR.TartimGuncelle.resources

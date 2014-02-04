@@ -87,6 +87,7 @@
             this.tartımGüncelleToolStripMenuItem.Name = "tartımGüncelleToolStripMenuItem";
             this.tartımGüncelleToolStripMenuItem.Size = new System.Drawing.Size(182, 24);
             this.tartımGüncelleToolStripMenuItem.Text = "Tartım Güncelle";
+            this.tartımGüncelleToolStripMenuItem.Click += new System.EventHandler(this.tartımGüncelleToolStripMenuItem_Click);
             // 
             // parametrelerToolStripMenuItem
             // 

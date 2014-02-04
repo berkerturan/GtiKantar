@@ -22,12 +22,18 @@ namespace GTIKANTAR.DataType
 
         public string ALAN1 { get; set; }
 
+        public string ALAN2 { get; set; }
+
         public decimal? TARTIM1 { get; set; }
 
         public string KULLANICI { get; set; }
 
         public Guid ROWID { get; set; }
 
+        public bool? GIRISYONUMU { get; set; }//true ise türkiyeye giren araçlar false ise Türkiye'den çıkan araçlar
+
         public bool? KAPIYAYAZILDIMI { get; set; }
+
+        
     }
 }

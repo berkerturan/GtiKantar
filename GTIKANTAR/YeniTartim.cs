@@ -23,6 +23,7 @@ namespace GTIKANTAR
             InitializeComponent();
         }
         int sayi = 0;
+          IEnumerable<KANTAR_KAPI> KapiVerileri;
         private void port_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
         {
             sayi = 0;
@@ -48,6 +49,7 @@ namespace GTIKANTAR
 
         private void YeniTartim_Load(object sender, EventArgs e)
         {
+            cmbAlan1.SelectedIndex = 0;
             port.WriteTimeout = 5000;
             port.ReadTimeout = 5000;
             port.PortName = Crytography.Decrypt(ConfigurationManager.AppSettings["Port"].ToString(), Petaframe.Security.Crytography.HashType.AES);
@@ -105,7 +107,7 @@ namespace GTIKANTAR
             {
                 try
                 {
-                    port.Open();
+                    //port.Open();
                     timer1.Interval = 1000;
                     timer1.Start();
                 }
@@ -114,9 +116,28 @@ namespace GTIKANTAR
                     MessageBox.Show("Port Açılamadı. Lütfen Ayarları Kontrol Ediniz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+           
+                        if (Helpers.Tools.PingAtilabiliyor(ConnectionStrings.KapiConnection))
+                        {
+                            using (KANTAR_KAPIBS kbs = new KANTAR_KAPIBS(ConnectionStrings.KapiConnection))
+                            {
+                                try
+                                {
+                                    KapiVerileri = kbs.ListeleSinceYesterday();
+                                }
+                                catch(Exception ex)
+                                {
+                                    MessageBox.Show(ex.Message);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            KapiVerileri = null;
+                        }
 
         }
-
+       
         private void YeniTartim_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (port.IsOpen)
@@ -160,29 +181,43 @@ namespace GTIKANTAR
                     {
                         MessageBox.Show("Tartımı Sabitlemeniz Gerekmektedir!", "Eksik Veri", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                        else if (decimal.TryParse(txtTartim.Text, out tartim))
+                    else if (decimal.TryParse(txtTartim.Text, out tartim))
                     {
                         MessageBox.Show("Tartım Alanındaki Veri Yanlıştır!", "Hatalı Veri", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+                    else if (txtAlan2.Enabled == true && string.IsNullOrEmpty(txtAlan2.Text))
+                    {
+                        MessageBox.Show("İkinci Tartımın Açıklamasını Yazın!", "Eksik Veri", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                     else
                     {
-                        IEnumerable<KANTAR_KAPI> KapiVerileri;
-                        using (KANTAR_KAPIBS kbs = new KANTAR_KAPIBS(ConnectionStrings.KapiConnection))
-                        {
-                            KapiVerileri = kbs.ListeleSinceYesterday();
-                        }
+
                         KANTAR_LOCAL entity = new KANTAR_LOCAL()
                         {
                             ILKTARTIMTARIHI = DateTime.Now,
                             DORSE = txtDorse.Text,
                             KAPIYAYAZILDIMI = false,
-                            KULLANICI = frmLogin.GirişYapan.FNAME + ' ' + frmLogin.GirişYapan.LNAME,
+                            KULLANICI = Helpers.GlobalVeriler.ACTIVEUSER.FNAME + ' ' + Helpers.GlobalVeriler.ACTIVEUSER.LNAME,
                             PLAKA = txtPlaka.Text,
                             ROWID = Guid.NewGuid(),
                             TARTIM1 = tartim,
                             TIP = "C",
-                            ALAN1 = cmbAlan1.SelectedValue.ToString()
+                            ALAN1 = cmbAlan1.SelectedValue.ToString(),
+                            GIRISYONUMU = Helpers.GlobalVeriler.KantarYonu,
+                            ALAN2=txtAlan2.Text,
                         };
+                        using (KANTAR_LOCALBS lbs = new KANTAR_LOCALBS(ConnectionStrings.KantarConnection))
+                        {
+                            if (lbs.Kaydet(entity))
+                            {
+                                MessageBox.Show("İşleminiz Başarıyla Tamamlanmıştır.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                scope.Complete();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Kayıt İşlemi Sırasında Bir Hata Oluştu. Lütfen Tekrar Deneyin!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
                     }
                 }
                 catch (Exception exp)
@@ -195,6 +230,14 @@ namespace GTIKANTAR
             }
 
 
+        }
+
+        private void txtPlaka_TextChanged(object sender, EventArgs e)
+        {
+            if (KapiVerileri.ToList().Where(x => x.PLAKA.ToLower().Trim().Replace(" ","") == txtPlaka.Text.ToLower().Trim().Replace(" ","") && x.ILKTARTIMTARIHI.Value.Date == DateTime.Today.Date && x.GIRISYONUMU.Value == Helpers.GlobalVeriler.KantarYonu).Count() > 0)
+            {
+                txtAlinan.Enabled = true;
+            }
         }
     }
 }
